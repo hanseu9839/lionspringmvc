@@ -2,9 +2,9 @@ package org.example.ioexam.controller;
 
 import org.example.ioexam.domain.User;
 import org.example.ioexam.service.UserService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+//@Controller
 public class UserController {
     private final UserService userService;
 
