@@ -1,14 +1,30 @@
 package org.example.ioexam.controller;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.example.ioexam.domain.User;
 import org.example.ioexam.service.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-//@Controller
+@Controller
 public class UserController {
+
     private final UserService userService;
 
+    @PostConstruct
+    public void init() {
+        System.out.println("postConstruct 실행!!");
+    }
+
+
+    @PreDestroy
+    public void destory() {
+        System.out.println("preDestory 실행!!");
+    }
+
     public UserController(UserService userService) {
+        System.out.println("UserController 생성자 호출!!");
         this.userService = userService;
     }
 

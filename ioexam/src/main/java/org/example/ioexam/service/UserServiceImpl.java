@@ -2,27 +2,22 @@ package org.example.ioexam.service;
 
 import org.example.ioexam.dao.UserDao;
 import org.example.ioexam.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-//@Service
+@Service
 public class UserServiceImpl implements UserService{
 
     private UserDao userDao;
-
 //    @Autowired
 //    @Qualifier("userHanDaoImpl")
 //    public void setUserDao(UserDao userDao) {
 //        this.userDao = userDao;
 //    }
 
-        public UserServiceImpl(UserDao userDao) {
+    public UserServiceImpl(@Qualifier("userHanDaoImpl")UserDao userDao) {
         this.userDao = userDao;
     }
-
-
 
     @Override
     public void joinUser(User user) {

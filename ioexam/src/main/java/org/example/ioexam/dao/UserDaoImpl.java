@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 
-//@Component
+@Component
 public class UserDaoImpl implements UserDao{
     Map<String , User> users= new HashMap<>();
 
