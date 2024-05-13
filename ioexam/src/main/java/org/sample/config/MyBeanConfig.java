@@ -1,13 +1,13 @@
-package org.example.sample.config;
+package org.sample.config;
 
 
-import org.example.sample.bean.MyBean;
+import org.sample.bean.MyBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Scope;
 
 
-@ComponentScan(basePackages ="sample")
+@ComponentScan(basePackages ="org.sample.bean")
 public class MyBeanConfig {
     //<bean id="myBean" class = "sample.bean.MyBean"/>
     //1과2는 싱글톤 3은 프로토타입

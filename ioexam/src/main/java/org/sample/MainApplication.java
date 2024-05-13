@@ -1,10 +1,9 @@
-package org.example.sample;
+package org.sample;
 
-import org.example.sample.book.Book;
+import org.sample.book.Book;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class MainApplication {

@@ -1,7 +1,7 @@
-package org.example.sample.run;
+package org.sample.run;
 
-import org.example.sample.bean.Game;
-import org.example.sample.config.GameConfig;
+import org.sample.bean.Game;
+import org.sample.config.GameConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

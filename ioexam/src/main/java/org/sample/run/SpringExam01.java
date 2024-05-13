@@ -1,7 +1,7 @@
-package org.example.sample.run;
+package org.sample.run;
 
-import org.example.sample.bean.MyBean;
-import org.example.sample.config.MyBeanConfig;
+import org.sample.bean.MyBean;
+import org.sample.config.MyBeanConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 public class SpringExam01 {

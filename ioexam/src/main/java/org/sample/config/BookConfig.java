@@ -1,8 +1,7 @@
-package org.example.sample.config;
+package org.sample.config;
 
-import org.example.sample.book.Book;
+import org.sample.book.Book;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 public class BookConfig {

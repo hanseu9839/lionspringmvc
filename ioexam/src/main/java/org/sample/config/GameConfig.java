@@ -1,8 +1,8 @@
-package org.example.sample.config;
+package org.sample.config;
 
-import org.example.sample.bean.Dice;
-import org.example.sample.bean.Game;
-import org.example.sample.bean.Player;
+import org.sample.bean.Dice;
+import org.sample.bean.Game;
+import org.sample.bean.Player;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
