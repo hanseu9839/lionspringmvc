@@ -20,5 +20,7 @@ public class AopexamApplication implements CommandLineRunner {
         System.out.println(service.doSomething());
 
         service.hello();
+
+        service.setName("doung");
     }
 }
