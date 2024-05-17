@@ -1,10 +1,7 @@
 package org.example.aopexam;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -29,5 +26,10 @@ public class ServiceAspect {
     @After("pc2()")
     public void after(){
         System.out.println("After ::::::::::: ");
+    }
+
+    @AfterReturning(pointcut= "execution(* org.example.aopexam.*.*(..))", returning = "result")
+    public void afterReturningServiceMethod(JoinPoint joinPoint, Object result){
+        System.out.println("After method: " + joinPoint.getSignature().getName() + ", return value: " + result);
     }
 }
