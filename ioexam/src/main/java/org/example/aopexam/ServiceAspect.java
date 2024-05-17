@@ -28,8 +28,9 @@ public class ServiceAspect {
         System.out.println("After ::::::::::: ");
     }
 
-    @AfterReturning(pointcut= "execution(* org.example.aopexam.*.*(..))", returning = "result")
+    @AfterReturning(pointcut= "execution(String org.example.aopexam.*.*(..))", returning = "result")
     public void afterReturningServiceMethod(JoinPoint joinPoint, Object result){
         System.out.println("After method: " + joinPoint.getSignature().getName() + ", return value: " + result);
     }
+
 }
