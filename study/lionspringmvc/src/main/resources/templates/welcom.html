@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1 th:text="${welcomeMsg}"></h1>
+    <ul>
+        <li th:each="item, itemStat : ${items}" th:text="${item.name}">
+        </li>
+    </ul>
+    <div th:include="common/footer :: footer"></div>
+</body>
+</html>

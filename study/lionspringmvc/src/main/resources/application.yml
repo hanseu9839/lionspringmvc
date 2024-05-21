@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: lionspringmvc
+
+  messages:
+    basename: messages
+    encoding: UTF-8
+    cache-duration: 0
