@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Board</title>
+    <link rel="stylesheet" th:href="@{/css/board/style.css}">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css}">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma-rtl.min.css}">
+</head>
+<body>
+
+
+    <form class="box" th:action="@{/writeform}" method="post" th:object="${board}">
+        <h1 class="has-text-white is-size-1">Create a New Board</h1>
+        <div th:if="${#fields.hasGlobalErrors()}">
+            <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">글로벌 오류 메시지</p>
+        </div>
+        <div class="field">
+            <label class="label" for="name" th:text="#{board.name}">Name :</label>
+            <input class="input" type="text" id="name" th:field="*{name}">
+        </div>
+        <div class="fields-error" th:errors="*{name}"></div>
+        <br/>
+
+        <div class="field">
+            <label class="label" for="title" th:text="#{board.title}">Title :</label>
+            <input class="input" type="text" id="title" th:field="*{title}">
+        </div>
+        <div class="fields-error" th:errors="*{title}"></div>
+        <br/>
+
+        <div class="field">
+            <label class="label" for="content" th:text="#{board.content}">Content:</label>
+            <input class="input" type="text" id="content" th:field="*{content}">
+        </div>
+        <div class="fields-error" th:errors="*{content}"></div>
+
+        <div class="field">
+            <label class="label" for="password" th:text="#{board.password}">Password:</label>
+            <input class="input" type="password" id="password" th:field="*{password}">
+        </div>
+        <div class="fields-error" th:errors="*{password}"></div>
+
+        <input class="button is-primary" type="submit" value="create"/>
+    </form>
+
+</body>
+</html>

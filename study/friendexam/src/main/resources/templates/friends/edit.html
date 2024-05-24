@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/friends/edit/{id}(id=${friend.id})}" method="post" th:object="${friend}">
+        <label for="name">이름</label>
+        <input type="text" id="name" th:field="*{name}" required/>
+        <br>
+        <label for="email">이메일</label>
+        <input type="text" id="email" th:field="*{email}" required/>
+        <br>
+        <input type="submit" value="친구정보수정">
+    </form>
+</body>
+</html>

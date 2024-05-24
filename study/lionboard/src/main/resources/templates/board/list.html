@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    >
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma-rtl.min.css"
+    >
+</head>
+<body>
+
+<!--<span class="right">-->
+<!--            <span class="grey" id="strong">검색</span>-->
+<!--    <select>-->
+<!--        <option value="제목" name="제목" >제목</option>-->
+<!--        <option value="글쓴이" name="글쓴이">글쓴이</option>-->
+<!--    </select>-->
+<!--<input type="text"> <input type="button" name="검색" class="gradient" th:onclick="|location.href='@{}'|" value="검색" >-->
+<!--</span>-->
+<div class="container">
+    <section class="section">
+        <h1 class="columns is-mobile is-centered has-text-white is-size-3">테킷 게시판</h1>
+        <div class="columns is-mobile is-centered">
+            <table class="table is-bordered" th:if="${!boards.empty}">
+                <thead class="table-header">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Created At</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="board : ${boards}">
+                    <td th:text="${board.id}"></td>
+                    <td th:text="${board.name}"></td>
+                    <td>
+                        <a th:href="@{/view/{id}(id=${board.id})}" th:text="${board.title}"></a>
+                    </td>
+                    <td th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <div class="pagination columns is-mobile is-centered" role="navigation" aria-label="pagination" th:if="${boards.totalPages > 1}">
+            <ul class="pagination-list">
+                <li th:each="i : ${#numbers.sequence(1, boards.totalPages)}">
+                    <a th:href="@{/list(page=${i})}" class="pagination-link" th:text="${i}"></a>
+                </li>
+            </ul>
+        </div>
+        <br/>
+        <span class="columns is-mobile is-centered"><a th:href="@{/writeform}">글쓰기</a></span>
+    </section>
+</div>
+
+
+</body>
+
+</html>

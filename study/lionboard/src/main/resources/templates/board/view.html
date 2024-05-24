@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세 조회</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    >
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma-rtl.min.css"
+    >
+</head>
+<body>
+    <section class="section">
+        <div class="column is-one-one">
+            <div class="box">
+                <h1 class="has-text-white is-size-1" th:text="${board.title}"></h1>
+                <br/>
+                <div class="block is-size-5">Name: <span th:text="${board.name}"></span></div>
+                <div class="block is-size-5">Content: <span th:text="${board.content}"></span></div>
+                <div class="block is-size-5">Created At: <span th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}"></span></div>
+
+                <a class="button is-link is-dark" th:href="@{/list}">List</a>
+                <a class="button is-link is-dark" th:href="@{/update/{id}(id=${board.id})}">Edit</a>
+                <a class="button is-link is-dark" th:href="@{/delete/{id}(id=${board.id})}">Delete</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

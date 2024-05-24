@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css}">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma-rtl.min.css}">
+</head>
+<body>
+    <div class="column is-one-one">
+        <form class="box" method="post" th:action="@{/delete/{id}(id=${board.id})}" th:object="${board}">
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p  th:each="err : ${#fields.globalErrors()}" th:text="${err}">오류 메시지</p>
+            </div>
+            <h1>Delete Board</h1>
+            <div class="field">
+                <label class="label" for="password">Password:</label>
+                <div class="control">
+                    <input class="input" type="password" id="password" th:name="*{password}">
+                </div>
+            </div>
+            <input class="button is-primary" type="submit" value="Delete"/>
+        </form>
+    </div>
+</body>
+</html>
